@@ -23,16 +23,17 @@ export default function Projects() {
     {
       title: 'IoT Dashboard Management System',
       icon: 'fa-network-wired',
-      summary: `Engineered a comprehensive management system for IoT devices, enhancing real-time monitoring and data analysis.`,
-      details: `- Developed a modular IoT dashboard that provided real-time monitoring and analytics for various connected devices.
-        - Integrated comprehensive REST APIs to facilitate seamless communication between the front-end and back-end components.
-        - Implemented flexible and customizable design options for entity cards, including features like dropdowns and calendars.
-        - Focused on improving code maintainability and performance by addressing over 50 bugs and writing comprehensive test cases, achieving 40% code coverage.
-        - Employed advanced state management and data handling techniques to ensure smooth operation and user experience.`,
-      impact: `- Enhanced user flexibility and customization options by 40%.
-        - Improved application performance and stability through optimized code and refactoring.
-        - Enabled efficient data handling and visualization, leading to more informed decision-making processes.
-        - Streamlined integration with existing systems, improving operational efficiency for end-users.`,
+      summary: `Developed a robust low-code/no-code IoT dashboard management system that enables efficient real-time monitoring.`,
+      details: `- Designed and implemented a user-friendly drag-and-drop interface to simplify dashboard creation and customization, enabling users to build their monitoring solutions without extensive coding.
+        - Integrated a variety of pre-built templates and modular components to facilitate quick setup and configuration of IoT dashboards.
+        - Developed and exposed REST APIs to ensure seamless communication between the front-end and back-end systems, enhancing data integration and interaction.
+        - Implemented advanced workflow automation features to streamline repetitive tasks and improve operational efficiency.
+        - Focused on responsive design to ensure optimal performance and usability across different devices and screen sizes.
+        - Improved code maintainability by addressing over 50 issues and achieving 40% code coverage through comprehensive testing.`,
+      impact: `- Increased user flexibility and customization capabilities by 40%, allowing for more personalized dashboard experiences.
+        - Enhanced overall application performance and stability through code optimization and refactoring efforts.
+        - Facilitated more efficient data handling and visualization, leading to better-informed decision-making.
+        - Streamlined integration with existing systems, boosting operational efficiency for end-users.`,
       technologies: ['Spring Boot', 'Angular', 'React', 'REST APIs', 'JUnit']
     },
     {
@@ -43,7 +44,7 @@ export default function Projects() {
         - Coordinated with multiple teams to ensure seamless execution, attracting significant participation and attendance, contributing to the fest's success.`,
       impact: `- Enhanced participant and audience experience through an improved event management system.
         - Attracted a larger audience and increased engagement with effective online event management and promotion.`,
-      technologies: ['Html', 'Css', 'JavaScript', 'Django','Postgres']
+      technologies: ['HTML', 'CSS', 'JavaScript', 'Django','Postgres']
     },
     {
       title: 'E-Commerce Website',
@@ -57,7 +58,7 @@ export default function Projects() {
       impact: `- Increased user engagement by 30% through an intuitive and user-friendly interface.
         - Improved user satisfaction by 25% due to enhanced navigation and overall site performance.
         - Achieved a significant boost in sales conversion rates and customer retention through effective feature implementation and user experience enhancements.`,
-      technologies: ['Html', 'Css', 'TypeScript', 'Angular','Postgres']
+      technologies: ['HTML', 'CSS', 'TypeScript', 'Angular','Postgres']
     }
   ];
 

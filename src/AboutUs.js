@@ -40,7 +40,7 @@ export default function AboutUs() {
       <ul className="expertise-list">
         <li>Front-End: Angular, React, HTML, CSS, JavaScript, TypeScript</li>
         <li>Back-End: Spring Boot, REST APIs, Database Management</li>
-        <li>Tools & Platforms: Git, Docker, AWS, Jenkins</li>
+        <li>Tools & Platforms: Git, Jenkins</li>
         <li>Methodologies: Agile, Scrum, Continuous Integration/Continuous Deployment (CI/CD)</li>
       </ul>
     </div>
