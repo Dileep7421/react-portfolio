@@ -47,7 +47,7 @@ function App() {
 
     const handleLinkClick = (link) => {
         setActiveLink(link);
-        setIsNavOpen(false); // Close the navigation when a link is clicked
+        setIsNavOpen(false);
 
         const sectionRefs = {
             Home: homeRef,
@@ -81,7 +81,12 @@ function App() {
                     <img src={dileepImg} className="App-logo" alt="logo" />
                 </div><br />
                 <h2>Ampolu Dileep Kumar</h2>
-                <p style={style}>Front-end Developer <span style={{ color: '#000000' }}>at Brane Group</span></p>
+                <p class="job-title">
+                    Front-end Developer
+                    <span class="company-name">at Brane Group</span>
+                    <span class="experience">with over 2+ years of experience</span>
+                </p>
+
                 <nav>
                     <ul className="navigation">
                         {[

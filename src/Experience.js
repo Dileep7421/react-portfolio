@@ -9,7 +9,7 @@ export default function Experience() {
         <h3 className="role-title"><i className="fas fa-laptop-code"></i> Front-End & Back-End Developer</h3>
         <p className="company-details"><i className="fas fa-building"></i> Company Name: Brane Group</p>
         <p className="company-location"><i className="fas fa-map-marker-alt"></i> Company Location: Hyderabad</p>
-        <p className="duration"><i className="fas fa-calendar-alt"></i> Duration: 2 Years</p>
+        <p className="duration"><i className="fas fa-calendar-alt"></i> Duration: 2+ Years</p>
         <div className="skills">
           <h4 className="skills-header"><i className="fas fa-tools"></i> Key Skills & Technologies:</h4>
           <p>HTML, CSS, JavaScript, TypeScript, Angular, React, JSON, Git, SPA (Single Page Applications)</p>
