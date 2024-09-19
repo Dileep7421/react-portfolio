@@ -18,7 +18,7 @@ export default function Projects() {
         - Reduced customer complaints by 25% through the implementation of intuitive user interfaces and error-handling mechanisms.
         - Improved system efficiency by 30%, allowing for more seamless data processing and interaction.
         - Successfully delivered the project within a 10-month timeline, working in an Agile environment.`,
-      technologies: ['Angular', 'React', 'FusionCharts', 'REST APIs']
+      technologies: ['Angular', 'FusionCharts', 'REST APIs']
     },
     {
       title: 'IoT Dashboard Management System',
@@ -34,7 +34,7 @@ export default function Projects() {
         - Enhanced overall application performance and stability through code optimization and refactoring efforts.
         - Facilitated more efficient data handling and visualization, leading to better-informed decision-making.
         - Streamlined integration with existing systems, boosting operational efficiency for end-users.`,
-      technologies: ['Spring Boot', 'Angular', 'React', 'REST APIs', 'JUnit']
+      technologies: ['Spring Boot', 'Angular', 'REST APIs', 'JUnit']
     },
     {
       title: 'Thrusang Fest Web Application',
