@@ -1,14 +1,33 @@
-/* AboutUs.css */
+
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #555;
+  --sub-header-color: #00aae2;
+  --list-item-icon-color: #28a745;
+  --list-item-border-color: #007bff;
+  --expertise-list-border-color: #17a2b8;
+}
+
+body.dark-mode {
+  --bg-color: #1e1e1e;
+  --text-color: #ddd;
+  --sub-header-color: #1e90ff;
+  --list-item-icon-color: #4caf50;
+  --list-item-border-color: #1e90ff;
+  --expertise-list-border-color: #1e90ff;
+}
+
 .about-us {
   max-width: 1300px;
   margin: 0 auto;
   padding: 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
-
 
 .sub-header {
   font-size: 1.2rem;
-  color: #00aae2;
+  color: var(--sub-header-color);
   margin-top: 30px;
   display: flex;
   align-items: center;
@@ -20,7 +39,7 @@
 
 p {
   line-height: 1.6;
-  color: #555;
+  color: var(--text-color);
 }
 
 .values-list,
@@ -44,15 +63,15 @@ p {
   font-weight: 900;
   position: absolute;
   left: 0;
-  color: #28a745;
+  color: var(--list-item-icon-color);
 }
 
 .values-list li {
-  border-left: 3px solid #007bff;
+  border-left: 3px solid var(--list-item-border-color);
   padding-left: 15px;
 }
 
 .expertise-list li {
-  border-left: 3px solid #17a2b8;
+  border-left: 3px solid var(--expertise-list-border-color);
   padding-left: 15px;
 }

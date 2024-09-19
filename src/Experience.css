@@ -1,97 +1,121 @@
+
+:root {
+  --text-color: #333;
+  --header-text-color: #2c3e50;
+  --icon-color-primary: #3498db;
+  --icon-color-secondary: #e67e22;
+  --sub-text-color: #555;
+  --skills-icon-color: #9b59b6;
+  --achievement-icon-color: #27ae60;
+  --achievement-bg-color: #ebe9e9;
+  --achievement-border-color: #ecf0f1;
+}
+
+body.dark-mode {
+  --text-color: #ddd;
+  --header-text-color: #ddd;
+  --icon-color-primary: #85c1e9;
+  --icon-color-secondary: #f39c12;
+  --sub-text-color: #bbb;
+  --skills-icon-color: #bb8fce;
+  --achievement-icon-color: #2ecc71;
+  --achievement-bg-color: #444;
+  --achievement-border-color: #555;
+}
+
 .experience-container {
-    max-width: 1300px;
-    margin: 0 auto;
-    color: #333;
-    padding-left: 20px;
-  }
-  
-  .header-text {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 30px;
-    font-size: 2rem;
-    position: relative;
-  }
-  
-  .experience-header i {
-    margin-right: 10px;
-    color: #3498db;
-  }
-  
-  .role-title {
-    color: #2c3e50;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .role-title i {
-    margin-right: 10px;
-    color: #e67e22;
-  }
-  
-  .company-details, .company-location, .duration {
-    color: #555;
-    margin: 5px 0;
-    font-style: italic;
-    display: flex;
-    align-items: center;
-  }
-  
-  .company-details i, .company-location i, .duration i {
-    margin-right: 8px;
-    color: #3498db;
-  }
-  
-  .skills, .achievements, .end-to-end-involvement {
-    margin-top: 25px;
-  }
-  
-  .skills-header, .achievements-header, .end-to-end-header {
-    color: #2c3e50;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .skills-header i, .achievements-header i, .end-to-end-header i {
-    margin-right: 10px;
-    color: #9b59b6;
-  }
-  
-  p {
-    color: #555;
-    line-height: 1.6;
-  }
-  
-  .achievements-list {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  
-  .achievements-list li {
-    color: #444;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .achievements-list li i {
-    margin-right: 8px;
-    color: #27ae60;
-  }
-  
-  h4 {
-    font-size: 1.25rem;
-    border-bottom: 2px solid #ecf0f1;
-    padding-bottom: 5px;
-  }
-  
-  .end-to-end-involvement p {
-    margin-top: 15px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-left: 4px solid #3498db;
-    border-radius: 5px;
-  }
-  
+  max-width: 1300px;
+  margin: 0 auto;
+  color: var(--text-color);
+  padding-left: 20px;
+}
+
+.header-text {
+  text-align: center;
+  color: var(--header-text-color);
+  margin-bottom: 30px;
+  font-size: 2rem;
+  position: relative;
+}
+
+.experience-header i {
+  margin-right: 10px;
+  color: var(--icon-color-primary);
+}
+
+.role-title {
+  color: var(--header-text-color);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.role-title i {
+  margin-right: 10px;
+  color: var(--icon-color-secondary);
+}
+
+.company-details, .company-location, .duration {
+  color: var(--sub-text-color);
+  margin: 5px 0;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+}
+
+.company-details i, .company-location i, .duration i {
+  margin-right: 8px;
+  color: var(--icon-color-primary);
+}
+
+.skills, .achievements, .end-to-end-involvement {
+  margin-top: 25px;
+}
+
+.skills-header, .achievements-header, .end-to-end-header {
+  color: var(--header-text-color);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.skills-header i, .achievements-header i, .end-to-end-header i {
+  margin-right: 10px;
+  color: var(--skills-icon-color);
+}
+
+p {
+  color: var(--sub-text-color);
+  line-height: 1.6;
+}
+
+.achievements-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.achievements-list li {
+  color: var(--text-color);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.achievements-list li i {
+  margin-right: 8px;
+  color: var(--achievement-icon-color);
+}
+
+h4 {
+  font-size: 1.25rem;
+  border-bottom: 2px solid var(--achievement-border-color);
+  padding-bottom: 5px;
+}
+
+.end-to-end-involvement p {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: var(--achievement-bg-color);
+  border-left: 4px solid var(--icon-color-primary);
+  border-radius: 5px;
+}

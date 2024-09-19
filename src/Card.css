@@ -1,28 +1,53 @@
+
+:root {
+  --card-bg: #f0f0f0;
+  --card-hover-bg: #e0e0e0;
+  --icon-color: #333;
+  --text-color: #000;
+  --description-color: #666;
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
+  --card-border-color: #e0e0e0;
+}
+
+body.dark-mode {
+  --card-bg: #2c2c2c;
+  --card-hover-bg: #3c3c3c;
+  --icon-color: #f0f0f0;
+  --text-color: #fff;
+  --description-color: #bbb;
+  --box-shadow-color: rgba(0, 0, 0, 0.5);
+  --card-border-color: #444;
+}
+
 .card {
-    background: #f0f0f0;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    width: 150px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s;
-  }
-  
-  .card:hover {
-    background: #e0e0e0;
-  }
-  
-  .icon {
-    font-size: 40px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  h3 {
-    font-size: 18px;
-    margin: 0;
-  }
-  .card-description {
-    font-size: 14px;
-    color: #666;
-  }
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 150px;
+  box-shadow: 0 4px 8px var(--box-shadow-color);
+  transition: background 0.3s;
+  border: 1px solid var(--progress-border-color);
+}
+
+.card:hover {
+  border: 1px solid var(--progress-border-color);
+  background: var(--card-hover-bg);
+}
+
+.icon {
+  font-size: 40px;
+  color: var(--icon-color);
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.card-description {
+  font-size: 14px;
+  color: var(--description-color);
+}

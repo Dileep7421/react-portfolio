@@ -1,4 +1,4 @@
-/* Existing styles */
+
 .App {
   text-align: center;
 }
@@ -19,18 +19,45 @@
   width: 100%;
   overflow: auto;
   scrollbar-width: thin; 
-  scrollbar-color: #dad7d7 #f1f1f1;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
   scroll-behavior: smooth;
 }
 
+:root {
+  --background-color: #f9f9f9;
+  --text-color: #2c3e50;
+  --link-hover-color: #2980b9;
+  --highlight-color: #00aae2;
+  --active-link-bg: #00aae2;
+  --scrollbar-thumb: #dad7d7;
+  --scrollbar-track: #f1f1f1;
+}
+
+body.dark-mode {
+  --background-color: #333;
+  --text-color: #ecf0f1;
+  --link-hover-color: #3498db;
+  --highlight-color: #3498db;
+  --active-link-bg: #1abc9c;
+  --scrollbar-thumb: #555;
+  --scrollbar-track: #2c3e50;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
 .left-side-panel {
-  background-color: #f0efef;
+  position: relative;
+  background-color: var(--background-color);
   padding: 5% 3% 5% 3%;
   text-align: center;
   width: 21%;
   overflow: auto;
   scrollbar-width: thin; 
-  scrollbar-color: #dad7d7 #f1f1f1;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
   scroll-behavior: smooth;
   transition: transform 0.3s ease;
 }
@@ -54,8 +81,8 @@
 }
 
 .navigation .active {
-  background-color: #00aae2;
-  color: #000;
+  background-color: var(--active-link-bg);
+  color: var(--text-color);
 }
 
 .div-spacing {
@@ -76,7 +103,7 @@
 .hamburger-icon .bar {
   width: 30px;
   height: 3px;
-  background-color: #333;
+  background-color: var(--text-color);
   margin: 6px 0;
   transition: all 0.3s ease;
 }
@@ -120,20 +147,20 @@
 .job-title {
   font-size: 16px;
   line-height: 1.6; 
-  color: #2c3e50;
+  color: var(--text-color);
   margin: 20px 0;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .company-name {
-  color: #3498db;
+  color: var(--highlight-color);
   margin-left: 10px;
   font-weight: bold;
   transition: color 0.3s, transform 0.3s, font-size 0.3s;
 }
 
 .company-name:hover {
-  color: #2980b9;
+  color: var(--link-hover-color);
   transform: translateY(-2px) scale(1.05);
 }
 
@@ -145,6 +172,54 @@
 }
 
 .experience:hover {
-  color: #34495e;
+  color: var(--text-color);
+}
+
+.right-side-panel::-webkit-scrollbar,
+.left-side-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.right-side-panel::-webkit-scrollbar-track,
+.left-side-panel::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+}
+
+.right-side-panel::-webkit-scrollbar-thumb,
+.left-side-panel::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 10px;
+}
+
+
+.dark-mode-toggle-icon {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    margin-top: 20px;
+}
+
+.dark-mode-toggle-icon:hover {
+  transform: scale(1.1);
+}
+
+.dark-mode-toggle-icon svg {
+  transition: color 0.3s ease;
+}
+
+.dark-mode-toggle-icon svg path {
+  fill: currentColor;
+}
+
+body.dark-mode .dark-mode-toggle-icon svg {
+  color: #f39c12; 
+}
+
+body.light-mode .dark-mode-toggle-icon svg {
+  color: #3498db; 
 }
 

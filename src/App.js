@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { FaMoon, FaSun } from 'react-icons/fa';
 import dileepImg from './dileep.jpeg';
 import './App.css';
 import Home from './Home';
@@ -16,12 +17,9 @@ function App() {
         height: window.innerHeight,
     });
     const [activeLink, setActiveLink] = useState('Home');
-    const [isNavOpen, setIsNavOpen] = useState(false); // State to handle navigation visibility
-    const style = {
-        textTransform: 'uppercase',
-        fontSize: '14px',
-        color: '#00aae2'
-    };
+    const [isNavOpen, setIsNavOpen] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
     const homeRef = useRef(null);
     const aboutUsRef = useRef(null);
     const technologiesRef = useRef(null);
@@ -45,6 +43,10 @@ function App() {
         };
     }, []);
 
+    useEffect(() => {
+        document.body.className = isDarkMode ? 'dark-mode' : 'light-mode';
+    }, [isDarkMode]);
+
     const handleLinkClick = (link) => {
         setActiveLink(link);
         setIsNavOpen(false);
@@ -63,28 +65,32 @@ function App() {
         sectionRefs[link]?.current?.scrollIntoView({ behavior: 'smooth' });
     };
 
+    const toggleDarkMode = () => {
+        setIsDarkMode(!isDarkMode);
+    };
+
     return (
         <div className="main-panel" style={{
             height: `${windowDimensions.height}px`,
             width: `${windowDimensions.width}px`,
         }}>
-            {/* Hamburger Icon */}
             <div className={`hamburger-icon ${isNavOpen ? 'open' : ''}`} onClick={() => setIsNavOpen(!isNavOpen)}>
                 <div className="bar"></div>
                 <div className="bar"></div>
                 <div className="bar"></div>
             </div>
-
-            {/* Left Side Panel */}
             <div className={`left-side-panel ${isNavOpen ? 'open' : ''}`}>
+            <div className="dark-mode-toggle-icon" onClick={toggleDarkMode}>
+                    {isDarkMode ? <FaSun /> : <FaMoon />}
+                </div>
                 <div>
                     <img src={dileepImg} className="App-logo" alt="logo" />
                 </div><br />
                 <h2>Ampolu Dileep Kumar</h2>
-                <p class="job-title">
+                <p className="job-title">
                     Front-end Developer
-                    <span class="company-name">at Brane Group</span>
-                    <span class="experience">with over 2+ years of experience</span>
+                    <span className="company-name">at Brane Group</span>
+                    <span className="experience">with over 2+ years of experience</span>
                 </p>
 
                 <nav>
@@ -111,7 +117,6 @@ function App() {
                 </nav>
             </div>
 
-            {/* Right Side Panel */}
             <div className="right-side-panel">
                 <div ref={homeRef} className='home-div' >
                     <Home height={windowDimensions.height} />
