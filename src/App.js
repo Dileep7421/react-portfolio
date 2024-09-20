@@ -84,7 +84,7 @@ function App() {
                     {isDarkMode ? <FaSun /> : <FaMoon />}
                 </div>
                 <div>
-                    <img src={dileepImg} className="App-logo" alt="logo" />
+                    <img src={dileepImg} className="image" alt="logo" />
                 </div><br />
                 <h2>Ampolu Dileep Kumar</h2>
                 <p className="job-title">
