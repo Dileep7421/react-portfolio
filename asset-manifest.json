@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/react-portfolio/static/css/main.6fecaca3.css",
-    "main.js": "/react-portfolio/static/js/main.98eba4c6.js",
+    "main.js": "/react-portfolio/static/js/main.915284ad.js",
     "static/js/453.bb257cf5.chunk.js": "/react-portfolio/static/js/453.bb257cf5.chunk.js",
-    "static/media/DileepResume.pdf": "/react-portfolio/static/media/DileepResume.43800f2ef2213a2c6ecd.pdf",
     "static/media/home-bg-image.jpg": "/react-portfolio/static/media/home-bg-image.88c675462650425efd33.jpg",
+    "static/media/DileepResume.pdf": "/react-portfolio/static/media/DileepResume.c3924f3f62f3f30ff3fe.pdf",
     "static/media/dileep.jpeg": "/react-portfolio/static/media/dileep.8f490c970ced145172f7.jpeg",
     "index.html": "/react-portfolio/index.html",
     "main.6fecaca3.css.map": "/react-portfolio/static/css/main.6fecaca3.css.map",
-    "main.98eba4c6.js.map": "/react-portfolio/static/js/main.98eba4c6.js.map",
+    "main.915284ad.js.map": "/react-portfolio/static/js/main.915284ad.js.map",
     "453.bb257cf5.chunk.js.map": "/react-portfolio/static/js/453.bb257cf5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6fecaca3.css",
-    "static/js/main.98eba4c6.js"
+    "static/js/main.915284ad.js"
   ]
 }
