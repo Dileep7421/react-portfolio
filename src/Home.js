@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import resume from './AmpoluDileepKumar_Resume.pdf'
+import resume from './Resume_AmpoluDileepKumar.pdf'
 
 export default function Home({ height }) {
   return (
@@ -14,7 +14,7 @@ export default function Home({ height }) {
         </div>
       <a 
           href={resume} 
-          download='AmpoluDileepKumar_Resume.pdf' 
+          download='Resume_AmpoluDileepKumar.pdf' 
           className='download-link'
         >
             <i className='fas fa-download'></i>
