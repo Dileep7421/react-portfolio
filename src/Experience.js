@@ -12,7 +12,7 @@ export default function Experience() {
         <p className="duration"><i className="fas fa-calendar-alt"></i> Duration: 2+ Years</p>
         <div className="skills">
           <h4 className="skills-header"><i className="fas fa-tools"></i> Key Skills & Technologies:</h4>
-          <p>HTML, CSS, JavaScript, TypeScript, Angular, React, JSON, Git, SPA (Single Page Applications)</p>
+          <p>HTML, CSS, JavaScript, TypeScript, Angular, React, JSON, Git, SPA (Single Page Applications), NgRx</p>
         </div>
         <div className="achievements">
           <h4 className="achievements-header"><i className="fas fa-trophy"></i> Achievements & Contributions:</h4>

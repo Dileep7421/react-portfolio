@@ -13,7 +13,8 @@ export default function Projects() {
       details: `- Led the design and implementation of a new dashboard, focusing on user-centered design principles and interactivity.
         - Incorporated advanced data visualization techniques, allowing users to interact with and customize various data components.
         - Worked on optimizing the application for performance, reducing load times and improving the overall user experience.
-        - Collaborated with a team to ensure the integration of new features such as drag-and-drop widgets, theme customization, and user-specific data filtering options.`,
+        - Collaborated with a team to ensure the integration of new features such as drag-and-drop widgets, theme customization, and user-specific data filtering options. 
+        - Developed over six distinct types of charts using the FusionCharts library, tailoring each chart type to meet specific data visualization needs and requirements`,
       impact: `- Increased user engagement by 20% and overall satisfaction by 15%.
         - Reduced customer complaints by 25% through the implementation of intuitive user interfaces and error-handling mechanisms.
         - Improved system efficiency by 30%, allowing for more seamless data processing and interaction.
@@ -40,8 +41,15 @@ export default function Projects() {
       title: 'Thrusang Fest Web Application',
       icon: 'fa-calendar-alt',
       summary: `Organized and executed Thrusang '22 & '23, a large-scale cultural festival featuring a diverse range of events, including live performances, art exhibitions, workshops, and interactive activities.`,
-      details: `- Developed and launched a dedicated website to manage event registrations, schedules, and updates, significantly enhancing participant and audience experience.
-        - Coordinated with multiple teams to ensure seamless execution, attracting significant participation and attendance, contributing to the fest's success.`,
+      details: `- Created and maintained the website for Thrusang’22 , a large-scale national-level technical fest, ensuring smooth operation throughout the event.
+        - Engineered a responsive website using modern front-end technologies like HTML, CSS, JavaScript and Django,
+providing real-time updates for events and schedules. 
+- Integrated backend systems using Python to manage user registrations, event data, and feedback submissions. 
+- Handled frontend and backend maintenance during the fest, ensuring 99% uptime for continuous access to
+event-related information. 
+- Optimized performance for 200+ concurrent users with robust server-side handling and efficient database
+management. 
+- Crafted an interactive user interface, leading to a 20% increase in user participation`,
       impact: `- Enhanced participant and audience experience through an improved event management system.
         - Attracted a larger audience and increased engagement with effective online event management and promotion.`,
       technologies: ['HTML', 'CSS', 'JavaScript', 'Django','Postgres']
@@ -94,15 +102,25 @@ export default function Projects() {
             <div className="modal">
               <button className="close-button" onClick={handleCloseModal}>✖</button>
               <h2 className="modal-title"><i className={`fas ${selectedProject.icon} modal-icon`}></i> {selectedProject.title}</h2>
-              <p className="modal-details">{selectedProject.details}</p>
+              <ul className="modal-details">
+                {selectedProject.details.split('\n').map((line, idx) => (
+                  line.trim().startsWith('-') && <li key={idx}>{line.replace('-', '').trim()}</li>
+                ))}
+              </ul>
+
               <h4>Technologies Used:</h4>
               <ul className="technologies-list">
                 {selectedProject.technologies.map((tech, idx) => (
                   <li key={idx}>{tech}</li>
                 ))}
               </ul>
+
               <h4>Project Impact:</h4>
-              <p className="modal-impact">{selectedProject.impact}</p>
+              <ul className="modal-impact">
+                {selectedProject.impact.split('\n').map((line, idx) => (
+                  line.trim().startsWith('-') && <li key={idx}>{line.replace('-', '').trim()}</li>
+                ))}
+              </ul>
             </div>
           </div>
         )}

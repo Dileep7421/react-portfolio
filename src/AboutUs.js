@@ -38,7 +38,7 @@ export default function AboutUs() {
         With a deep understanding of both front-end and back-end technologies, we offer a comprehensive skill set:
       </p>
       <ul className="expertise-list">
-        <li>Front-End: Angular, React, HTML, CSS, JavaScript, TypeScript</li>
+        <li>Front-End: Angular, React, HTML, CSS, JavaScript, TypeScript, NgRx</li>
         <li>Back-End: Spring Boot, REST APIs, Database Management</li>
         <li>Tools & Platforms: Git, Jenkins</li>
         <li>Methodologies: Agile, Scrum, Continuous Integration/Continuous Deployment (CI/CD)</li>
