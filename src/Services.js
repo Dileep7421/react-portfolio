@@ -11,10 +11,12 @@ export default function Services() {
     { 
         iconClass: 'fab fa-js-square',
         title: 'JavaScript & TypeScript', 
-        description: `JavaScript is a versatile programming language, and TypeScript is its strict syntactical superset adding optional static typing.` 
-      },
-    { iconClass: 'fab fa-java', title: 'Spring Boot', description: 'An extension of the Spring framework that simplifies the setup and development of new Spring applications.' },
-  ];
+        description: 'JavaScript is a versatile programming language, and TypeScript is its strict syntactical superset adding optional static typing.' 
+    },
+    { iconClass: 'fab fa-node-js', title: 'Node.js', description: 'A JavaScript runtime built on Chrome\'s V8 JavaScript engine, enabling server-side development.' },
+    { iconClass: 'fab fa-java', title: 'Java', description: 'A versatile and powerful object-oriented programming language widely used for developing applications.' }
+];
+
 
   return (
     <div>

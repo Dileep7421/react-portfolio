@@ -88,7 +88,7 @@ function App() {
                 </div><br />
                 <h2>Ampolu Dileep Kumar</h2>
                 <p className="job-title">
-                    Front-end Developer
+                    Software Developer
                     <span className="company-name">at Brane Group</span>
                     <span className="experience">with over 2+ years of experience</span>
                 </p>

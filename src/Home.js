@@ -9,7 +9,7 @@ export default function Home({ height }) {
       <div className='text-overlay'>
         <div>
           I am <br/> 
-          <span style={{color:'#00aae2'}}>a Front End </span> <br/>
+          <span style={{color:'#00aae2'}}>a Software </span> <br/>
           <span>Developer</span>
         </div>
       <a 

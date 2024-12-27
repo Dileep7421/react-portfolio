@@ -10,7 +10,7 @@ export default function AboutUs() {
         that focuses on customer satisfaction and customer experience. Able
         to effectively self-manage during independent projects, as well as
         collaborate as part of a productive team. Proficient in an assortment of
-        technologies, including Angular, React, HTML, CSS, JavaScript, and TypeScript.
+        technologies, including Angular, React, HTML, CSS, JavaScript, TypeScript and NodeJS.
       </p>
       <p>
         Experienced in full-stack development with proficiency in working on front-end Angular
@@ -38,8 +38,8 @@ export default function AboutUs() {
         With a deep understanding of both front-end and back-end technologies, we offer a comprehensive skill set:
       </p>
       <ul className="expertise-list">
-        <li>Front-End: Angular, React, HTML, CSS, JavaScript, TypeScript, NgRx</li>
-        <li>Back-End: Spring Boot, REST APIs, Database Management</li>
+        <li>Front-End: Angular, React, HTML, CSS, JavaScript, TypeScript, RxJs, NgRx</li>
+        <li>Back-End: Java, NodeJS, REST APIs, Database Management</li>
         <li>Tools & Platforms: Git, Jenkins</li>
         <li>Methodologies: Agile, Scrum, Continuous Integration/Continuous Deployment (CI/CD)</li>
       </ul>

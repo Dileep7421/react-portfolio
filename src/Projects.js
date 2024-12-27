@@ -19,7 +19,7 @@ export default function Projects() {
         - Reduced customer complaints by 25% through the implementation of intuitive user interfaces and error-handling mechanisms.
         - Improved system efficiency by 30%, allowing for more seamless data processing and interaction.
         - Successfully delivered the project within a 10-month timeline, working in an Agile environment.`,
-      technologies: ['Angular', 'FusionCharts', 'REST APIs']
+      technologies: ['Angular', 'REST APIs', 'NodeJS']
     },
     {
       title: 'IoT Dashboard Management System',
@@ -35,7 +35,7 @@ export default function Projects() {
         - Enhanced overall application performance and stability through code optimization and refactoring efforts.
         - Facilitated more efficient data handling and visualization, leading to better-informed decision-making.
         - Streamlined integration with existing systems, boosting operational efficiency for end-users.`,
-      technologies: ['Spring Boot', 'Angular', 'REST APIs', 'JUnit']
+      technologies: ['Java', 'Angular', 'REST APIs', 'JUnit']
     },
     {
       title: 'Thrusang Fest Web Application',
@@ -66,7 +66,7 @@ management.
       impact: `- Increased user engagement by 30% through an intuitive and user-friendly interface.
         - Improved user satisfaction by 25% due to enhanced navigation and overall site performance.
         - Achieved a significant boost in sales conversion rates and customer retention through effective feature implementation and user experience enhancements.`,
-      technologies: ['HTML', 'CSS', 'TypeScript', 'Angular','Postgres']
+      technologies: ['HTML', 'CSS', 'TypeScript', 'Angular','Postgres', 'NodeJs']
     }
   ];
 
