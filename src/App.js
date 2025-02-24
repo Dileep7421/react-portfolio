@@ -118,28 +118,28 @@ function App() {
             </div>
 
             <div className="right-side-panel">
-                <div ref={homeRef} className='home-div' >
+                <div ref={homeRef} className='home-div scroll' >
                     <Home height={windowDimensions.height} />
                 </div>
-                <div ref={aboutUsRef} className='aboutus-div div-spacing'>
+                <div ref={aboutUsRef} className='aboutus-div div-spacing scroll'>
                     <AboutUs />
                 </div>
-                <div ref={technologiesRef} className='technologies-div div-spacing'>
+                <div ref={technologiesRef} className='technologies-div div-spacing scroll'>
                     <Services />
                 </div>
-                <div ref={skillsRef} className='skills-div div-spacing'>
+                <div ref={skillsRef} className='skills-div div-spacing scroll'>
                     <Skills />
                 </div>
-                <div ref={educationRef} className='education-div div-spacing'>
+                <div ref={educationRef} className='education-div div-spacing scroll'>
                     <Education />
                 </div>
-                <div ref={experienceRef} className='experience-div div-spacing'>
+                <div ref={experienceRef} className='experience-div div-spacing scroll'>
                     <Experience />
                 </div>
-                <div ref={projectRef} className='project-div div-spacing'>
+                <div ref={projectRef} className='project-div div-spacing scroll'>
                     <Projects />
                 </div>
-                <div ref={contactRef} className='contact-div div-spacing'>
+                <div ref={contactRef} className='contact-div div-spacing scroll'>
                     <ContactUs />
                 </div>
             </div>
