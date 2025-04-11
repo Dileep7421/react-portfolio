@@ -67,7 +67,24 @@ management.
         - Improved user satisfaction by 25% due to enhanced navigation and overall site performance.
         - Achieved a significant boost in sales conversion rates and customer retention through effective feature implementation and user experience enhancements.`,
       technologies: ['HTML', 'CSS', 'TypeScript', 'Angular','Postgres', 'NodeJs']
+    },
+    {
+      title: 'Snowbeadz-admin | Freelance',
+      icon: 'fa-user-cog',
+      summary: `Developed a feature-rich admin panel using Angular for managing products, categories, users, and orders on an online dress purchasing platform.`,
+      details: `- Designed and built an admin panel interface using Angular, tailored for effective content and user management.
+        - Implemented full CRUD functionalities for managing dresses, categories, users, and orders via dynamic, reusable forms.
+        - Utilized Angular Reactive Forms, Angular Material, and custom SCSS for a responsive and intuitive UI across devices.
+        - Integrated REST APIs using Angular services and RxJS for real-time data updates and efficient state management.
+        - Applied performance optimization techniques such as lazy loading, trackBy in *ngFor, and OnPush change detection for better scalability.
+        - Worked closely with the client to gather feedback, enhance UX/UI, and deploy custom solutions as per their business needs.`,
+      impact: `- Enabled non-technical administrators to efficiently manage the platform without backend intervention.
+        - Improved admin workflow speed and data accuracy by over 35% through intuitive design and optimized logic.
+        - Increased platform stability and performance in high-traffic scenarios using Angular best practices.
+        - Delivered the solution on time with high client satisfaction and successful deployment into production.`,
+      technologies: ['Angular', 'RxJS', 'REST APIs', 'Angular Material', 'NodeJS']
     }
+    
   ];
 
   const handleOpenModal = (project) => {
