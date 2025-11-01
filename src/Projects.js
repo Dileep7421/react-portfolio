@@ -99,8 +99,9 @@ management.
 
   return (
     <div>
-      <h2 className="header-text"><i className="fas fa-project-diagram"></i> My Projects</h2>
-      <div className="projects-container">
+    <h2 className="header-text"><i className="fas fa-project-diagram"></i> My Projects</h2>
+    <div className="projects-container">
+      
         <div className="projects-grid">
           {projects.map((project, index) => (
             <div className="project-card" key={index}>
@@ -141,7 +142,7 @@ management.
             </div>
           </div>
         )}
-      </div>
+    </div>
     </div>
   );
 }

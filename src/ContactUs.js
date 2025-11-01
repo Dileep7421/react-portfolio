@@ -3,7 +3,7 @@ import './ContactUs.css'; // Import the CSS file for styling
 
 export default function ContactUs() {
   return (
-    <div>
+    <div className="section-container">
         <h2 className="header-text"><i className="fas fa-envelope"></i> Contact Us</h2>
         <div className="contact-container">
       <div className="contact-info">

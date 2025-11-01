@@ -3,7 +3,7 @@ import './Experience.css';
 
 export default function Experience() {
   return (
-    <div className="experience-container">
+    <div className="experience-container section-container">
       <h2 className="header-text"><i className="fas fa-briefcase"></i> Experience</h2>
       <div className="work-experience">
         <h3 className="role-title"><i className="fas fa-laptop-code"></i> Front-End & Back-End Developer</h3>

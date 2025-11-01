@@ -3,7 +3,7 @@ import './AboutUs.css';
 
 export default function AboutUs() {
   return (
-    <div className="about-us">
+    <div className="about-us section-container">
       <h2 className="header-text"><i className="fas fa-user"></i> About Us</h2>
       <p>
         To make use of my interpersonal skills to achieve goals of a company

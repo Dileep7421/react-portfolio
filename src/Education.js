@@ -28,24 +28,20 @@ export default function Education() {
   ];
 
   return (
-    <div>
-        <div>
-        <h2 className="header-text"><i className="fas fa-graduation-cap"></i> Education</h2>
-
-        </div>
-        <div  className="education-container">
+    <div className="section-container">
+      <h2 className="header-text"><i className="fas fa-graduation-cap"></i> Education</h2>
+      <div className="education-container">
         {educationData.map((edu, index) => (
-        <EducationCard 
-          key={index} 
-          title={edu.title} 
-          name={edu.name}
-          duration={edu.duration}
-          location={edu.location}
-          score={edu.score}
-        />
-      ))}
-        </div>
-      
+          <EducationCard 
+            key={index} 
+            title={edu.title} 
+            name={edu.name}
+            duration={edu.duration}
+            location={edu.location}
+            score={edu.score}
+          />
+        ))}
+      </div>
     </div>
   );
 }

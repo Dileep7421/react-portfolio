@@ -19,7 +19,7 @@ export default function Services() {
 
 
   return (
-    <div>
+    <div className="section-container">
       <h2 className="header-text"><i className="fas fa-cogs"></i> Technologies</h2>
       <div className="card-container">
         {technologies.map((tech, index) => (
@@ -34,3 +34,4 @@ export default function Services() {
     </div>
   );
 }
+

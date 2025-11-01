@@ -47,6 +47,151 @@ function App() {
         document.body.className = isDarkMode ? 'dark-mode' : 'light-mode';
     }, [isDarkMode]);
 
+    // Scroll detection and active link update
+    useEffect(() => {
+        const sectionRefs = {
+            'Home': homeRef,
+            'About Us': aboutUsRef,
+            'Technologies': technologiesRef,
+            'Skills': skillsRef,
+            'Education': educationRef,
+            'Experience': experienceRef,
+            'Projects': projectRef,
+            'Contact': contactRef
+        };
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-30% 0px -50% 0px',
+            threshold: 0.3
+        };
+
+        const observerCallback = (entries) => {
+            // Get all intersecting entries and find the one with highest visibility
+            const visibleSections = entries
+                .filter(entry => entry.isIntersecting)
+                .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+            if (visibleSections.length > 0) {
+                const activeSection = visibleSections[0];
+                Object.keys(sectionRefs).forEach((sectionName) => {
+                    if (sectionRefs[sectionName].current === activeSection.target) {
+                        setActiveLink(sectionName);
+                    }
+                });
+            }
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        // Observe all sections
+        Object.values(sectionRefs).forEach((ref) => {
+            if (ref.current) {
+                observer.observe(ref.current);
+            }
+        });
+
+        // Set initial active link to Home
+        setActiveLink('Home');
+
+        return () => {
+            Object.values(sectionRefs).forEach((ref) => {
+                if (ref.current) {
+                    observer.unobserve(ref.current);
+                }
+            });
+        };
+    }, []);
+
+    // Scroll-driven fade-in animations
+    useEffect(() => {
+        const sectionRefs = [aboutUsRef, technologiesRef, skillsRef, educationRef, experienceRef, projectRef, contactRef];
+
+        const updateScrollAnimations = () => {
+            const windowHeight = window.innerHeight;
+
+            sectionRefs.forEach((ref) => {
+                if (!ref.current) return;
+
+                const element = ref.current;
+                const rect = element.getBoundingClientRect();
+                const elementTop = rect.top;
+                const elementBottom = rect.bottom;
+                
+                // Animation triggers when element is in viewport
+                // Start: when element top reaches 70% of viewport height
+                // End: when element top reaches 30% of viewport height
+                const startPoint = windowHeight * 0.7;
+                const endPoint = windowHeight * 0.3;
+                
+                let progress = 0;
+                
+                // Check if element is visible in viewport
+                if (elementTop < windowHeight && elementBottom > 0) {
+                    if (elementTop <= endPoint) {
+                        // Element has passed the end point - fully visible
+                        progress = 1;
+                    } else if (elementTop <= startPoint) {
+                        // Element is in the animation zone
+                        const animationRange = startPoint - endPoint;
+                        const distanceFromEnd = elementTop - endPoint;
+                        if (animationRange > 0) {
+                            progress = 1 - (distanceFromEnd / animationRange);
+                            progress = Math.max(0, Math.min(1, progress));
+                        }
+                    } else {
+                        // Element is before animation zone
+                        progress = 0;
+                    }
+                } else if (elementTop < 0 && elementBottom < 0) {
+                    // Element has scrolled past - keep it visible
+                    progress = 1;
+                }
+                
+                // Apply easing function for smoother animation
+                const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+                const opacity = easeOutCubic;
+                const translateY = 60 * (1 - easeOutCubic);
+                
+                element.style.setProperty('--scroll-opacity', opacity);
+                element.style.setProperty('--scroll-translate-y', `${translateY}px`);
+            });
+        };
+
+        // Use throttled scroll event for smooth performance
+        let ticking = false;
+        const handleScroll = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    updateScrollAnimations();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        };
+
+        // Initial setup
+        const timeoutId = setTimeout(() => {
+            sectionRefs.forEach((ref) => {
+                if (ref.current) {
+                    // Set initial CSS custom properties
+                    ref.current.style.setProperty('--scroll-opacity', '0');
+                    ref.current.style.setProperty('--scroll-translate-y', '60px');
+                }
+            });
+            // Update on initial load
+            updateScrollAnimations();
+            
+            // Listen to scroll events
+            window.addEventListener('scroll', handleScroll, { passive: true });
+        }, 100);
+
+        return () => {
+            clearTimeout(timeoutId);
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     const handleLinkClick = (link) => {
         setActiveLink(link);
         setIsNavOpen(false);
@@ -83,9 +228,9 @@ function App() {
             <div className="dark-mode-toggle-icon" onClick={toggleDarkMode}>
                     {isDarkMode ? <FaSun /> : <FaMoon />}
                 </div>
-                <div>
-                    <img src={dileepImg} className="image" alt="logo" />
-                </div><br />
+                <div className="profile-image-container">
+                    <img src={dileepImg} className="image" alt="profile" />
+                </div>
                 <h2>Ampolu Dileep Kumar</h2>
                 <p className="job-title">
                     Software Developer
@@ -118,7 +263,7 @@ function App() {
             </div>
 
             <div className="right-side-panel">
-                <div ref={homeRef} className='home-div' >
+                <div ref={homeRef} className='home-div'>
                     <Home height={windowDimensions.height} />
                 </div>
                 <div ref={aboutUsRef} className='aboutus-div div-spacing'>

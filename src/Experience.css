@@ -1,121 +1,203 @@
-
-:root {
-  --text-color: #333;
-  --header-text-color: #2c3e50;
-  --icon-color-primary: #3498db;
-  --icon-color-secondary: #e67e22;
-  --sub-text-color: #555;
-  --skills-icon-color: #9b59b6;
-  --achievement-icon-color: #27ae60;
-  --achievement-bg-color: #ebe9e9;
-  --achievement-border-color: #ecf0f1;
-}
-
-body.dark-mode {
-  --text-color: #ddd;
-  --header-text-color: #ddd;
-  --icon-color-primary: #85c1e9;
-  --icon-color-secondary: #f39c12;
-  --sub-text-color: #bbb;
-  --skills-icon-color: #bb8fce;
-  --achievement-icon-color: #2ecc71;
-  --achievement-bg-color: #444;
-  --achievement-border-color: #555;
-}
-
 .experience-container {
-  max-width: 1300px;
+  max-width: 1200px;
   margin: 0 auto;
-  color: var(--text-color);
-  padding-left: 20px;
+  animation: fadeInUp 0.6s ease-out;
 }
 
-.header-text {
-  text-align: center;
-  color: var(--header-text-color);
-  margin-bottom: 30px;
-  font-size: 2rem;
-  position: relative;
+.work-experience {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
 }
 
-.experience-header i {
-  margin-right: 10px;
-  color: var(--icon-color-primary);
+.work-experience:hover {
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-color);
 }
 
 .role-title {
-  color: var(--header-text-color);
-  margin-bottom: 15px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
 }
 
 .role-title i {
-  margin-right: 10px;
-  color: var(--icon-color-secondary);
+  color: var(--primary-color);
+  font-size: 1.5rem;
 }
 
-.company-details, .company-location, .duration {
-  color: var(--sub-text-color);
-  margin: 5px 0;
-  font-style: italic;
+.company-details,
+.company-location,
+.duration {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
+  gap: 0.75rem;
 }
 
-.company-details i, .company-location i, .duration i {
-  margin-right: 8px;
-  color: var(--icon-color-primary);
+.company-details i,
+.company-location i,
+.duration i {
+  color: var(--primary-color);
+  width: 20px;
+  text-align: center;
 }
 
-.skills, .achievements, .end-to-end-involvement {
-  margin-top: 25px;
+.skills,
+.achievements,
+.end-to-end-involvement {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
 }
 
-.skills-header, .achievements-header, .end-to-end-header {
-  color: var(--header-text-color);
-  margin-bottom: 15px;
+.skills-header,
+.achievements-header,
+.end-to-end-header {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
+  gap: 0.75rem;
 }
 
-.skills-header i, .achievements-header i, .end-to-end-header i {
-  margin-right: 10px;
-  color: var(--skills-icon-color);
+.skills-header i,
+.achievements-header i,
+.end-to-end-header i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
 }
 
-p {
-  color: var(--sub-text-color);
-  line-height: 1.6;
+.skills p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  padding: 1rem;
+  background: var(--background-secondary);
+  border-radius: 12px;
+  border-left: 4px solid var(--primary-color);
 }
 
 .achievements-list {
-  list-style-type: none;
-  padding-left: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .achievements-list li {
-  color: var(--text-color);
-  margin-bottom: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: var(--background-secondary);
+  border-radius: 12px;
+  color: var(--text-primary);
+  line-height: 1.8;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.achievements-list li:hover {
+  transform: translateX(10px);
+  border-left-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
 }
 
 .achievements-list li i {
-  margin-right: 8px;
-  color: var(--achievement-icon-color);
-}
-
-h4 {
-  font-size: 1.25rem;
-  border-bottom: 2px solid var(--achievement-border-color);
-  padding-bottom: 5px;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
 }
 
 .end-to-end-involvement p {
-  margin-top: 15px;
-  padding: 15px;
-  background-color: var(--achievement-bg-color);
-  border-left: 4px solid var(--icon-color-primary);
-  border-radius: 5px;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--background-secondary) 0%, var(--surface) 100%);
+  border-radius: 12px;
+  border-left: 4px solid var(--secondary-color);
+}
+
+@media (max-width: 1200px) {
+  .work-experience {
+    padding: 2.5rem;
+  }
+
+  .role-title {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .work-experience {
+    padding: 2rem;
+  }
+
+  .role-title {
+    font-size: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .company-details,
+  .company-location,
+  .duration {
+    font-size: 1rem;
+  }
+
+  .skills-header,
+  .achievements-header,
+  .end-to-end-header {
+    font-size: 1.2rem;
+  }
+
+  .achievements-list li {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-experience {
+    padding: 1.5rem;
+  }
+
+  .role-title {
+    font-size: 1.3rem;
+  }
+
+  .company-details,
+  .company-location,
+  .duration {
+    font-size: 0.95rem;
+  }
+
+  .skills p,
+  .end-to-end-involvement p {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+
+  .achievements-list li {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
 }
