@@ -1,76 +1,67 @@
 .education-container {
-  max-width: min(1200px, 100%);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(280px, 1fr));
-  gap: clamp(1rem, 2vw, 2rem);
-  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  margin-top: 3.5rem;
+  position: relative;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
-  padding: 0 clamp(1rem, 3vw, 2rem);
-  align-items: stretch;
-  justify-items: stretch;
-  box-sizing: border-box;
+  padding-left: 2rem;
 }
 
-/* Ensure cards fill grid cells properly */
-.education-container > * {
-  width: 100%;
-  height: 100%;
-  min-width: 0;
+/* Vertical Timeline Track Line */
+.education-container::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: var(--border-color);
+  z-index: 0;
 }
 
-@media (max-width: 1400px) {
-  .education-container {
-    max-width: min(1100px, 100%);
-    grid-template-columns: repeat(3, minmax(260px, 1fr));
-    gap: clamp(1rem, 1.8vw, 1.8rem);
-  }
+/* Custom bullet node tracking indicators */
+.education-container > div {
+  position: relative;
+  z-index: 1;
 }
 
-@media (max-width: 1200px) {
-  .education-container {
-    max-width: 100%;
-    grid-template-columns: repeat(3, minmax(240px, 1fr));
-    gap: clamp(0.8rem, 1.5vw, 1.5rem);
-    padding: 0 clamp(0.5rem, 2vw, 1rem);
-  }
+.education-container > div::before {
+  content: '';
+  position: absolute;
+  left: -22px;
+  top: 2.8rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--background);
+  border: 3px solid var(--primary-color);
+  z-index: 2;
+  box-shadow: 0 0 0 4px var(--background);
+  transition: all 0.3s ease;
 }
 
-@media (max-width: 1100px) {
-  .education-container {
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
-    gap: clamp(0.8rem, 1.2vw, 1.2rem);
-    padding: 0 clamp(0.5rem, 1.5vw, 1rem);
-  }
-}
-
-@media (max-width: 968px) {
-  .education-container {
-    grid-template-columns: repeat(2, minmax(250px, 1fr));
-    gap: clamp(1rem, 1.5vw, 1.5rem);
-    padding: 0 clamp(0.5rem, 2vw, 1rem);
-  }
+.education-container > div:hover::before {
+  background: var(--primary-color);
+  transform: scale(1.2);
+  box-shadow: 0 0 10px var(--primary-color), 0 0 0 4px var(--background);
 }
 
 @media (max-width: 768px) {
   .education-container {
-    grid-template-columns: 1fr;
-    max-width: 100%;
-    gap: clamp(1rem, 1.5vw, 1.5rem);
-    padding: 0 clamp(0.5rem, 2vw, 1rem);
+    padding-left: 1.5rem;
+    gap: 1.8rem;
   }
-}
 
-@media (max-width: 480px) {
-  .education-container {
-    gap: clamp(0.75rem, 1.25vw, 1.25rem);
-    padding: 0 clamp(0.5rem, 1vw, 0.75rem);
+  .education-container::before {
+    left: 0;
   }
-}
 
-@media (max-width: 360px) {
-  .education-container {
-    gap: clamp(0.5rem, 1vw, 1rem);
-    padding: 0 0.5rem;
+  .education-container > div::before {
+    left: -19px;
+    top: 2.2rem;
   }
 }

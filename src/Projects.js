@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './Projects.css'; // Import a CSS file for styling
+import { createPortal } from 'react-dom';
+import './Projects.css';
 
 export default function Projects() {
   const [showModal, setShowModal] = useState(false);
@@ -7,23 +8,79 @@ export default function Projects() {
 
   const projects = [
     {
+      title: 'AesthatiQ – Healthcare Platform',
+      icon: 'fa-heartbeat',
+      category: 'Healthcare & Backend',
+      summary: `AesthatiQ is a comprehensive healthcare and clinic management platform designed to streamline patient care, pharmacy operations, treatment planning, appointment scheduling, and online consultations.`,
+      details: `- Designed and developed pharmacy cart management and inventory workflows.
+        - Implemented intelligent batch allocation based on product expiry and stock availability.
+        - Developed APIs for patient management, clinic operations, and treatment plans.
+        - Built payment integrations using Razorpay and PayU.
+        - Implemented real-time communication using WebSockets.
+        - Integrated Agora Video SDK for secure doctor-patient consultations.
+        - Developed patient vitals capture and booking workflow enhancements.
+        - Handled complex business validations and cross-module integrations.`,
+      impact: `- Automated pharmacy operations and virtual consultations to improve healthcare workflow efficiency.
+        - Reduced manual intervention and minimized inventory inconsistencies.
+        - Strengthened payment reliability and provided seamless patient management capabilities.
+        - Enhanced overall patient and doctor user experience.`,
+      technologies: ['Java', 'Spring Boot', 'PostgresSQL', 'WebSockets', 'Razorpay', 'PayU', 'Agora SDK', 'REST APIs', 'Git']
+    },
+    {
+      title: 'Spotlight – Payments & Credit Platform',
+      icon: 'fa-credit-card',
+      category: 'Fintech & Payments',
+      summary: `Spotlight is a financial management platform focused on payment processing, secure transaction handling, accurate credit tracking, and reliable credit management services.`,
+      details: `- Owned and maintained the Credit Management Service (CMS).
+        - Integrated Razorpay payment gateway for secure transaction flows.
+        - Developed payment verification and order management workflows.
+        - Implemented transaction validation and idempotency mechanisms to ensure correctness.
+        - Designed retry and failure handling strategies for failed transactions.
+        - Integrated payment outcomes with credit management services.
+        - Improved system logging, monitoring, and issue traceability.
+        - Resolved production issues related to transaction mismatches.`,
+      impact: `- Improved transaction reliability and reduced payment inconsistencies.
+        - Minimized revenue leakage risks and enhanced trust in financial operations.
+        - Automated credit updates and robust validation mechanisms, reducing manual reconciliation efforts by 40%.`,
+      technologies: ['Java', 'Spring Boot', 'PostgresSQL', 'Razorpay', 'REST APIs', 'Git', 'Microservices']
+    },
+    {
+      title: 'Snowbeadz-admin | Freelance',
+      icon: 'fa-user-cog',
+      category: 'Administrative Tool',
+      summary: `Developed a feature-rich admin panel using Angular for managing products, categories, users, and orders on an online dress purchasing platform.`,
+      details: `- Designed and built an admin panel interface using Angular, tailored for effective content and user management.
+        - Implemented full CRUD functionalities for managing dresses, categories, users, and orders via dynamic, reusable forms.
+        - Utilized Angular Reactive Forms, Angular Material, and custom SCSS for a responsive and intuitive UI across devices.
+        - Integrated REST APIs using Angular services and RxJS for real-time data updates and integration.
+        - Applied performance optimization techniques such as lazy loading, trackBy in *ngFor, and OnPush change detection for better scalability.
+        - Worked closely with the client to gather feedback, enhance UX/UI, and deploy custom solutions as per their business needs.`,
+      impact: `- Enabled non-technical administrators to efficiently manage the platform without backend intervention.
+        - Improved admin workflow speed and data accuracy by over 35% through intuitive design and optimized logic.
+        - Increased platform stability and performance in high-traffic scenarios using Angular best practices.
+        - Delivered the solution on time with high client satisfaction and successful deployment into production.`,
+      technologies: ['Angular', 'RxJS', 'REST APIs', 'Angular Material', 'NodeJS']
+    },
+    {
       title: 'Dashboard Customization Project',
       icon: 'fa-cogs',
+      category: 'Frontend & API',
       summary: `Developed an advanced, highly customizable dashboard interface that enhanced user engagement and system performance.`,
       details: `- Led the design and implementation of a new dashboard, focusing on user-centered design principles and interactivity.
         - Incorporated advanced data visualization techniques, allowing users to interact with and customize various data components.
         - Worked on optimizing the application for performance, reducing load times and improving the overall user experience.
         - Collaborated with a team to ensure the integration of new features such as drag-and-drop widgets, theme customization, and user-specific data filtering options. 
-        - Developed over six distinct types of charts using the FusionCharts library, tailoring each chart type to meet specific data visualization needs and requirements`,
+        - Developed over six distinct types of charts using the FusionCharts library, tailoring each chart type to meet specific data visualization needs and requirements.`,
       impact: `- Increased user engagement by 20% and overall satisfaction by 15%.
         - Reduced customer complaints by 25% through the implementation of intuitive user interfaces and error-handling mechanisms.
         - Improved system efficiency by 30%, allowing for more seamless data processing and interaction.
         - Successfully delivered the project within a 10-month timeline, working in an Agile environment.`,
-      technologies: ['Angular', 'REST APIs', 'NodeJS']
+      technologies: ['Angular', 'REST APIs', 'NodeJS', 'FusionCharts']
     },
     {
       title: 'IoT Dashboard Management System',
       icon: 'fa-network-wired',
+      category: 'Full-Stack Development',
       summary: `Developed a robust low-code/no-code IoT dashboard management system that enables efficient real-time monitoring.`,
       details: `- Designed and implemented a user-friendly drag-and-drop interface to simplify dashboard creation and customization, enabling users to build their monitoring solutions without extensive coding.
         - Integrated a variety of pre-built templates and modular components to facilitate quick setup and configuration of IoT dashboards.
@@ -35,28 +92,27 @@ export default function Projects() {
         - Enhanced overall application performance and stability through code optimization and refactoring efforts.
         - Facilitated more efficient data handling and visualization, leading to better-informed decision-making.
         - Streamlined integration with existing systems, boosting operational efficiency for end-users.`,
-      technologies: ['Java', 'Angular', 'REST APIs', 'JUnit']
+      technologies: ['Java', 'Angular', 'REST APIs', 'JUnit', 'Agile']
     },
     {
       title: 'Thrusang Fest Web Application',
       icon: 'fa-calendar-alt',
+      category: 'Web Application',
       summary: `Organized and executed Thrusang '22 & '23, a large-scale cultural festival featuring a diverse range of events, including live performances, art exhibitions, workshops, and interactive activities.`,
       details: `- Created and maintained the website for Thrusang’22 , a large-scale national-level technical fest, ensuring smooth operation throughout the event.
-        - Engineered a responsive website using modern front-end technologies like HTML, CSS, JavaScript and Django,
-providing real-time updates for events and schedules. 
-- Integrated backend systems using Python to manage user registrations, event data, and feedback submissions. 
-- Handled frontend and backend maintenance during the fest, ensuring 99% uptime for continuous access to
-event-related information. 
-- Optimized performance for 200+ concurrent users with robust server-side handling and efficient database
-management. 
-- Crafted an interactive user interface, leading to a 20% increase in user participation`,
+        - Engineered a responsive website using modern front-end technologies like HTML, CSS, JavaScript and Django, providing real-time updates for events and schedules. 
+        - Integrated backend systems using Python to manage user registrations, event data, and feedback submissions. 
+        - Handled frontend and backend maintenance during the fest, ensuring 99% uptime for continuous access to event-related information. 
+        - Optimized performance for 200+ concurrent users with robust server-side handling and efficient database management. 
+        - Crafted an interactive user interface, leading to a 20% increase in user participation.`,
       impact: `- Enhanced participant and audience experience through an improved event management system.
         - Attracted a larger audience and increased engagement with effective online event management and promotion.`,
-      technologies: ['HTML', 'CSS', 'JavaScript', 'Django','Postgres']
+      technologies: ['HTML', 'CSS', 'JavaScript', 'Django', 'Postgres', 'Python']
     },
     {
       title: 'E-Commerce Website',
       icon: 'fa-shopping-cart',
+      category: 'E-Commerce & Frontend',
       summary: `Built a full-featured e-commerce platform using Angular and TypeScript, enabling users to browse over 1,000 products, add items to the cart, and proceed to checkout, resulting in a 30% increase in user engagement.`,
       details: `- Designed a responsive and interactive user interface using Angular components and services, enhancing navigation across 15+ product categories and pages.
         - Implemented a secure and efficient checkout process, integrating payment gateways and ensuring data protection.
@@ -66,83 +122,140 @@ management.
       impact: `- Increased user engagement by 30% through an intuitive and user-friendly interface.
         - Improved user satisfaction by 25% due to enhanced navigation and overall site performance.
         - Achieved a significant boost in sales conversion rates and customer retention through effective feature implementation and user experience enhancements.`,
-      technologies: ['HTML', 'CSS', 'TypeScript', 'Angular','Postgres', 'NodeJs']
-    },
-    {
-      title: 'Snowbeadz-admin | Freelance',
-      icon: 'fa-user-cog',
-      summary: `Developed a feature-rich admin panel using Angular for managing products, categories, users, and orders on an online dress purchasing platform.`,
-      details: `- Designed and built an admin panel interface using Angular, tailored for effective content and user management.
-        - Implemented full CRUD functionalities for managing dresses, categories, users, and orders via dynamic, reusable forms.
-        - Utilized Angular Reactive Forms, Angular Material, and custom SCSS for a responsive and intuitive UI across devices.
-        - Integrated REST APIs using Angular services and RxJS for real-time data updates and efficient state management.
-        - Applied performance optimization techniques such as lazy loading, trackBy in *ngFor, and OnPush change detection for better scalability.
-        - Worked closely with the client to gather feedback, enhance UX/UI, and deploy custom solutions as per their business needs.`,
-      impact: `- Enabled non-technical administrators to efficiently manage the platform without backend intervention.
-        - Improved admin workflow speed and data accuracy by over 35% through intuitive design and optimized logic.
-        - Increased platform stability and performance in high-traffic scenarios using Angular best practices.
-        - Delivered the solution on time with high client satisfaction and successful deployment into production.`,
-      technologies: ['Angular', 'RxJS', 'REST APIs', 'Angular Material', 'NodeJS']
+      technologies: ['HTML', 'CSS', 'TypeScript', 'Angular', 'Postgres', 'NodeJs']
     }
-    
   ];
 
   const handleOpenModal = (project) => {
     setSelectedProject(project);
-    setShowModal(true);
+    setTimeout(() => {
+      setShowModal(true);
+    }, 20);
+    document.body.style.overflow = 'hidden'; // Lock background scrolling
   };
 
   const handleCloseModal = () => {
     setShowModal(false);
-    setSelectedProject(null);
+    setTimeout(() => {
+      setSelectedProject(null);
+    }, 400); // Allow drawer animation to complete before unmounting
+    document.body.style.overflow = 'unset'; // Unlock background scrolling
   };
 
   return (
-    <div>
-    <h2 className="header-text"><i className="fas fa-project-diagram"></i> My Projects</h2>
-    <div className="projects-container">
-      
-        <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div className="project-card" key={index}>
-              <i className={`fas ${project.icon} project-icon`}></i>
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-summary">{project.summary}</p>
-              <button className="project-button" onClick={() => handleOpenModal(project)}>
-                View More
+    <div className="projects-section-container section-container">
+      <h2 className="header-text">
+        <i className="fas fa-project-diagram"></i> My Projects
+      </h2>
+
+      <div className="projects-grid">
+        {projects.map((project, index) => (
+          <div className="project-card glass-container" key={index}>
+            <div className="project-card-header">
+              <span className="project-category">{project.category}</span>
+              <i className={`fas ${project.icon} project-card-icon`}></i>
+            </div>
+            
+            <h3 className="project-title">{project.title}</h3>
+            <p className="project-summary">{project.summary}</p>
+            
+            <div className="project-card-tech-box">
+              {project.technologies.slice(0, 3).map((tech, idx) => (
+                <span className="project-card-tech-badge" key={idx}>{tech}</span>
+              ))}
+              {project.technologies.length > 3 && (
+                <span className="project-card-tech-more">+{project.technologies.length - 3}</span>
+              )}
+            </div>
+
+            <button className="project-view-btn" onClick={() => handleOpenModal(project)}>
+              View Details <i className="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        ))}
+      </div>
+
+      {/* Full-Page Sliding Side-Drawer Overlay rendered in document.body via Portal */}
+      {selectedProject && createPortal(
+        <div className={`drawer-overlay ${showModal ? 'active' : ''}`} onClick={handleCloseModal}>
+          <div className={`project-drawer ${showModal ? 'open' : ''}`} onClick={(e) => e.stopPropagation()}>
+            
+            {/* Drawer Close Bar & Header tags */}
+            <div className="drawer-nav-bar">
+              <span className="drawer-category-tag">{selectedProject.category}</span>
+              <button className="drawer-close-btn" onClick={handleCloseModal} aria-label="Close details">
+                <i className="fas fa-times"></i> Close
               </button>
             </div>
-          ))}
-        </div>
 
-        {showModal && (
-          <div className="modal-overlay">
-            <div className="modal">
-              <button className="close-button" onClick={handleCloseModal}>✖</button>
-              <h2 className="modal-title"><i className={`fas ${selectedProject.icon} modal-icon`}></i> {selectedProject.title}</h2>
-              <ul className="modal-details">
-                {selectedProject.details.split('\n').map((line, idx) => (
-                  line.trim().startsWith('-') && <li key={idx}>{line.replace('-', '').trim()}</li>
-                ))}
-              </ul>
+            <div className="drawer-body">
+              {/* Project Title Block */}
+              <div className="drawer-title-block">
+                <div className="drawer-icon-box">
+                  <i className={`fas ${selectedProject.icon}`}></i>
+                </div>
+                <h2 className="drawer-project-title">{selectedProject.title}</h2>
+              </div>
 
-              <h4>Technologies Used:</h4>
-              <ul className="technologies-list">
-                {selectedProject.technologies.map((tech, idx) => (
-                  <li key={idx}>{tech}</li>
-                ))}
-              </ul>
+              {/* Summary Section */}
+              <div className="drawer-section">
+                <h3><i className="fas fa-info-circle section-icon-glow"></i> Summary</h3>
+                <p className="drawer-summary-text">{selectedProject.summary}</p>
+              </div>
 
-              <h4>Project Impact:</h4>
-              <ul className="modal-impact">
-                {selectedProject.impact.split('\n').map((line, idx) => (
-                  line.trim().startsWith('-') && <li key={idx}>{line.replace('-', '').trim()}</li>
-                ))}
-              </ul>
+              {/* Tech Stack Pills Cloud */}
+              <div className="drawer-section">
+                <h3><i className="fas fa-tools section-icon-glow"></i> Technologies Used</h3>
+                <div className="drawer-tech-cloud">
+                  {selectedProject.technologies.map((tech, idx) => (
+                    <span className="drawer-tech-pill" key={idx}>{tech}</span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Implementation checklist - High Contrast */}
+              <div className="drawer-section">
+                <h3><i className="fas fa-tasks section-icon-glow"></i> Key Contributions & Implementation</h3>
+                <ul className="drawer-details-list">
+                  {selectedProject.details.split('\n').map((line, idx) => {
+                    const trimmed = line.trim();
+                    if (trimmed.startsWith('-')) {
+                      return (
+                        <li key={idx} className="drawer-detail-item">
+                          <i className="fas fa-check-circle detail-check-icon"></i>
+                          <span>{trimmed.replace('-', '').trim()}</span>
+                        </li>
+                      );
+                    }
+                    return null;
+                  })}
+                </ul>
+              </div>
+
+              {/* Project Impact statistics */}
+              <div className="drawer-section">
+                <h3><i className="fas fa-chart-line section-icon-glow"></i> Measurable Project Impact</h3>
+                <ul className="drawer-impact-list">
+                  {selectedProject.impact.split('\n').map((line, idx) => {
+                    const trimmed = line.trim();
+                    if (trimmed.startsWith('-')) {
+                      return (
+                        <li key={idx} className="drawer-impact-item">
+                          <i className="fas fa-bolt detail-impact-icon"></i>
+                          <span>{trimmed.replace('-', '').trim()}</span>
+                        </li>
+                      );
+                    }
+                    return null;
+                  })}
+                </ul>
+              </div>
             </div>
+
           </div>
-        )}
-    </div>
+        </div>,
+        document.body
+      )}
     </div>
   );
 }

@@ -2,6 +2,7 @@
   display: flex;
   min-height: 100vh;
   position: relative;
+  background-color: var(--background);
 }
 
 /* Left Sidebar */
@@ -9,114 +10,130 @@
   position: fixed;
   left: 0;
   top: 0;
-  width: 280px;
+  width: 290px;
   height: 100vh;
-  background: var(--surface);
-  border-right: 1px solid var(--border-color);
-  padding: 2rem;
+  background: var(--surface-glass);
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border-right: 1px solid var(--glass-border);
+  padding: 2.5rem 1.8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   z-index: 100;
-  box-shadow: var(--shadow-lg);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease, border-color 0.4s ease;
   overflow-y: auto;
 }
 
 .left-side-panel::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
+.left-side-panel::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: 10px;
+}
+
+/* Profile Image Container */
 .profile-image-container {
   position: relative;
   margin-bottom: 1.5rem;
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.profile-image-container::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  background: var(--gradient-primary);
+  margin-top: 1.5rem;
+  padding: 5px;
   border-radius: 50%;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.profile-image-container:hover::before {
-  opacity: 1;
+  background: var(--gradient-primary);
+  box-shadow: var(--shadow-lg);
+  animation: pulseBorder 3s infinite;
+  display: inline-block;
 }
 
 .image {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--surface);
-  box-shadow: var(--shadow-xl);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: var(--background-secondary);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
 }
 
-.image:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+.profile-image-container:hover .image {
+  transform: scale(1.06) rotate(3deg);
 }
 
 .left-side-panel h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-family: var(--font-title);
+  font-size: 1.45rem;
+  font-weight: 800;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
-  animation: fadeInUp 0.6s ease-out 0.1s both;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
 }
 
 .job-title {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
   margin-bottom: 2rem;
   line-height: 1.6;
-  animation: fadeInUp 0.6s ease-out 0.2s both;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .company-name {
-  display: block;
   color: var(--primary-color);
-  font-weight: 600;
-  margin-top: 0.3rem;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.2px;
 }
 
 .experience {
-  display: block;
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  font-style: italic;
-  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 600;
+  opacity: 0.9;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Navigation */
+/* Navigation Links */
 .navigation {
   list-style: none;
   width: 100%;
-  margin-top: 1rem;
-  animation: fadeInUp 0.6s ease-out 0.3s both;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .navigation li {
-  margin-bottom: 0.5rem;
   cursor: pointer;
-  padding: 0.75rem 1rem;
-  border-radius: 12px;
-  transition: all 0.3s ease;
+  padding: 0.8rem 1.2rem;
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   color: var(--text-secondary);
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   position: relative;
   overflow: hidden;
+  border: 1px solid transparent;
+}
+
+.navigation li i {
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .navigation li::before {
@@ -128,117 +145,131 @@
   height: 100%;
   background: var(--gradient-primary);
   transform: scaleY(0);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navigation li:hover {
-  background: var(--background-secondary);
+  background: rgba(99, 102, 241, 0.05);
   color: var(--text-primary);
-  transform: translateX(5px);
+  transform: translateX(4px);
+  border-color: var(--glass-border);
 }
 
-.navigation li:hover::before {
-  transform: scaleY(1);
+.navigation li:hover i {
+  transform: scale(1.15);
 }
 
 .navigation li.active {
   background: var(--gradient-primary);
-  color: white;
-  box-shadow: var(--shadow-md);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navigation li.active i {
+  color: #ffffff;
 }
 
 .navigation li.active::before {
-  display: none;
+  transform: scaleY(1);
+  background: #ffffff;
 }
 
-.navigation li i {
-  margin-right: 0.75rem;
-  width: 20px;
-  text-align: center;
-}
-
-/* Dark Mode Toggle */
+/* Dark Mode Toggle Icon */
 .dark-mode-toggle-icon {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: var(--background-secondary);
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: var(--surface-glass);
+  border: 1px solid var(--glass-border);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-sm);
   z-index: 10;
 }
 
 .dark-mode-toggle-icon:hover {
-  transform: scale(1.1) rotate(15deg);
-  box-shadow: var(--shadow-lg);
+  transform: scale(1.08) rotate(12deg);
+  background: var(--background-secondary);
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
 }
 
 .dark-mode-toggle-icon svg {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: var(--primary-color);
-  transition: all 0.3s ease;
+  transition: transform 0.5s ease;
+}
+
+.dark-mode-toggle-icon:hover svg {
+  transform: scale(1.15);
 }
 
 /* Right Content Panel */
 .right-side-panel {
-  margin-left: 280px;
-  width: calc(100% - 280px);
+  margin-left: 290px;
+  width: calc(100% - 290px);
   background: var(--background);
-  transition: margin-left 0.3s ease;
+  transition: margin-left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 100vh;
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu Toggle */
 .hamburger-icon {
   display: none;
   position: fixed;
-  top: 1.5rem;
-  left: 1.5rem;
-  width: 50px;
-  height: 50px;
+  top: 1.2rem;
+  left: 1.2rem;
+  width: 46px;
+  height: 46px;
   z-index: 1001;
   cursor: pointer;
-  background: var(--surface);
-  border-radius: 12px;
-  box-shadow: var(--shadow-lg);
+  background: var(--surface-glass);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-md);
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 6px;
-  transition: all 0.3s ease;
+  gap: 5px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hamburger-icon:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
+  border-color: var(--primary-color);
 }
 
 .hamburger-icon .bar {
-  width: 25px;
-  height: 3px;
+  width: 22px;
+  height: 2.5px;
   background: var(--text-primary);
-  border-radius: 2px;
-  transition: all 0.3s ease;
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hamburger-icon.open .bar:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
+  transform: rotate(45deg) translate(5px, 5px);
 }
 
 .hamburger-icon.open .bar:nth-child(2) {
   opacity: 0;
+  transform: scale(0);
 }
 
 .hamburger-icon.open .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Section Spacing */
+/* Section Containers and Spacings */
 .div-spacing {
   padding: 0;
 }
@@ -254,36 +285,40 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0;
 }
 
-/* Responsive Design */
+/* Responsive Design Adjustments */
 @media (max-width: 1200px) {
   .left-side-panel {
-    width: 260px;
-    padding: 1.5rem;
+    width: 270px;
+    padding: 2rem 1.2rem;
   }
 
   .right-side-panel {
-    margin-left: 260px;
-    width: calc(100% - 260px);
+    margin-left: 270px;
+    width: calc(100% - 270px);
   }
 
   .image {
-    width: 140px;
-    height: 140px;
+    width: 125px;
+    height: 125px;
   }
 
   .left-side-panel h2 {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
 }
 
 @media (max-width: 968px) {
   .left-side-panel {
     transform: translateX(-100%);
-    width: 280px;
-    padding: 2rem;
+    width: 290px;
+    padding: 2.5rem 1.8rem;
+    background: var(--surface);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .left-side-panel.open {
@@ -309,44 +344,23 @@
   .project-div,
   .contact-div {
     min-height: auto;
-    padding: 2rem 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .left-side-panel {
-    width: 280px;
-    padding: 1.5rem;
-  }
-
-  .navigation li {
-    padding: 0.65rem 0.85rem;
-    font-size: 0.9rem;
-  }
-
-  .navigation li i {
-    margin-right: 0.5rem;
-    width: 18px;
+    padding: 4rem 0;
   }
 }
 
 @media (max-width: 480px) {
   .left-side-panel {
     width: 100%;
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
   }
 
   .image {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
   }
 
   .left-side-panel h2 {
-    font-size: 1.2rem;
-  }
-
-  .job-title {
-    font-size: 0.85rem;
+    font-size: 1.25rem;
   }
 
   .dark-mode-toggle-icon {
@@ -359,13 +373,7 @@
   .hamburger-icon {
     top: 1rem;
     left: 1rem;
-    width: 45px;
-    height: 45px;
-  }
-
-  .navigation li {
-    padding: 0.6rem 0.75rem;
-    font-size: 0.85rem;
-    margin-bottom: 0.4rem;
+    width: 42px;
+    height: 42px;
   }
 }

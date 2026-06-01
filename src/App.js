@@ -215,10 +215,7 @@ function App() {
     };
 
     return (
-        <div className="main-panel" style={{
-            height: `${windowDimensions.height}px`,
-            width: `${windowDimensions.width}px`,
-        }}>
+        <div className="main-panel">
             <div className={`hamburger-icon ${isNavOpen ? 'open' : ''}`} onClick={() => setIsNavOpen(!isNavOpen)}>
                 <div className="bar"></div>
                 <div className="bar"></div>
@@ -234,8 +231,8 @@ function App() {
                 <h2>Ampolu Dileep Kumar</h2>
                 <p className="job-title">
                     Software Developer
-                    <span className="company-name">at Brane Group</span>
-                    <span className="experience">with over 2+ years of experience</span>
+                    <span className="company-name">at Dimensionleap PVT LTD</span>
+                    <span className="experience">with over 3+ years of experience</span>
                 </p>
 
                 <nav>
