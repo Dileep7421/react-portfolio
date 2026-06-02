@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
-import resume from './Resume_AmpoluDileepKumar.pdf';
+import resume from './AmpoluDileepKumar_Software_Engineer_Resume.pdf';
 import bgImage from './home-bg-image.jpg';
 
 export default function Home() {
-  const roles = ['Software Developer', 'Full-Stack Engineer', 'Problem Solver'];
+ const roles = [
+  'Software Engineer',
+  'Full-Stack Developer',
+  'Java Developer',
+  'Angular Developer',
+  'Problem Solver'
+];
   const [roleIndex, setRoleIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -76,15 +82,14 @@ export default function Home() {
         </div>
 
         <p className="hero-description">
-          Building high-performance, user-centric web applications with modern technologies. 
-          Specialized in Angular, React, Node.js, and creating flawless digital experiences.
+          Software Engineer with experience in Java, Angular, React, and Node.js. Skilled in developing scalable web applications, building user-friendly interfaces, and delivering high-quality software solutions. Passionate about problem-solving, continuous learning, and creating impactful digital experiences.
         </p>
 
         {/* Dual Actions CTA */}
         <div className="cta-container">
           <a 
             href={resume} 
-            download="Resume_AmpoluDileepKumar.pdf" 
+            download="AmpoluDileepKumar_Software_Engineer_Resume.pdf" 
             className="home-btn btn-primary"
           >
             <i className="fas fa-download"></i>

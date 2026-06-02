@@ -16,7 +16,7 @@ export default function AboutUs() {
   ];
 
   const expertise = [
-    { category: 'Front-End', skills: ['Angular', 'React', 'HTML', 'CSS', 'JavaScript', 'TypeScript', 'RxJs', 'NgRx'], icon: 'fab fa-react' },
+    { category: 'Front-End', skills: ['Angular', 'React', 'HTML', 'CSS', 'JavaScript', 'TypeScript', 'RxJs'], icon: 'fab fa-react' },
     { category: 'Back-End', skills: ['Java', 'NodeJS', 'REST APIs', 'Database Management'], icon: 'fas fa-server' },
     { category: 'Tools & Platforms', skills: ['Git', 'Jenkins', 'GitHub', 'CI/CD'], icon: 'fas fa-tools' },
     { category: 'Methodologies', skills: ['Agile', 'Scrum', 'SDLC', 'Sprint Planning'], icon: 'fas fa-project-diagram' }

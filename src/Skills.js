@@ -2,11 +2,11 @@ import React from 'react';
 import './Skills.css'; 
 
 const skills = [
+  { name: 'Java', percentage: 80, icon: 'fab fa-java', color: '#f89820', gradient: 'linear-gradient(135deg, #f89820 0%, #e8850d 100%)' },
   { name: 'Angular', percentage: 80, icon: 'fab fa-angular', color: '#dd0031', gradient: 'linear-gradient(135deg, #dd0031 0%, #c3002f 100%)' },
   { name: 'React', percentage: 65, icon: 'fab fa-react', color: '#61dafb', gradient: 'linear-gradient(135deg, #61dafb 0%, #21a9c7 100%)' },
   { name: 'HTML', percentage: 90, icon: 'fab fa-html5', color: '#e34c26', gradient: 'linear-gradient(135deg, #e34c26 0%, #c5371a 100%)' },
   { name: 'CSS', percentage: 70, icon: 'fab fa-css3-alt', color: '#2965f1', gradient: 'linear-gradient(135deg, #2965f1 0%, #1e4ed8 100%)' },
-  { name: 'Java', percentage: 70, icon: 'fab fa-java', color: '#f89820', gradient: 'linear-gradient(135deg, #f89820 0%, #e8850d 100%)' },
   { name: 'NodeJS', percentage: 60, icon: 'fab fa-node-js', color: '#68a063', gradient: 'linear-gradient(135deg, #68a063 0%, #4f7a4a 100%)' },
   { name: 'TypeScript', percentage: 75, icon: 'fab fa-js-square', color: '#007acc', gradient: 'linear-gradient(135deg, #007acc 0%, #005a9e 100%)' },
   { name: 'JavaScript', percentage: 80, icon: 'fab fa-js-square', color: '#f7df1e', gradient: 'linear-gradient(135deg, #f7df1e 0%, #d4ba1a 100%)' },

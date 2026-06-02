@@ -4,6 +4,7 @@ import './Services.css';
 
 export default function Services() {
   const technologies = [
+    { iconClass: 'fab fa-java', title: 'Java', description: 'A versatile and powerful object-oriented programming language widely used for developing applications.' },
     { iconClass: 'fab fa-angular', title: 'Angular', description: 'A platform for building mobile and desktop web applications.' },
     { iconClass: 'fab fa-react', title: 'React', description: 'A JavaScript library for building user interfaces.' },
     { iconClass: 'fab fa-html5', title: 'HTML', description: 'The standard markup language for documents designed to be displayed in a web browser.' },
@@ -13,8 +14,8 @@ export default function Services() {
         title: 'JavaScript & TypeScript', 
         description: 'JavaScript is a versatile programming language, and TypeScript is its strict syntactical superset adding optional static typing.' 
     },
-    { iconClass: 'fab fa-node-js', title: 'Node.js', description: 'A JavaScript runtime built on Chrome\'s V8 JavaScript engine, enabling server-side development.' },
-    { iconClass: 'fab fa-java', title: 'Java', description: 'A versatile and powerful object-oriented programming language widely used for developing applications.' }
+    { iconClass: 'fab fa-node-js', title: 'Node.js', description: 'A JavaScript runtime built on Chrome\'s V8 JavaScript engine, enabling server-side development.' }
+    
 ];
 
 

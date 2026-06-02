@@ -62,7 +62,7 @@ export default function Experience() {
             <div className="experience-skills-box">
               <h5>Technologies Mastered:</h5>
               <div className="experience-skills-pills">
-                {['Angular', 'React', 'HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'NgRx', 'RxJs', 'Java', 'NodeJS', 'Git', 'REST APIs'].map((tech, idx) => (
+                {['Angular', 'React', 'HTML', 'CSS', 'JavaScript', 'TypeScript', 'RxJs', 'Java', 'NodeJS', 'Git', 'REST APIs'].map((tech, idx) => (
                   <span className="exp-tech-pill" key={idx}>
                     {tech}
                   </span>
@@ -117,7 +117,7 @@ export default function Experience() {
               </h4>
               
               <div className="experience-location">
-                <i className="fas fa-map-marker-alt"></i> Remote / India
+                <i className="fas fa-map-marker-alt"></i> Hyderabad / India
               </div>
             </div>
 
