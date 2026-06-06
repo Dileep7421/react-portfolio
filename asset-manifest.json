@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/react-portfolio/static/css/main.12cb0698.css",
-    "main.js": "/react-portfolio/static/js/main.fe95f08e.js",
+    "main.js": "/react-portfolio/static/js/main.e2da2b99.js",
     "static/js/919.c8322f28.chunk.js": "/react-portfolio/static/js/919.c8322f28.chunk.js",
     "static/media/home-bg-image.jpg": "/react-portfolio/static/media/home-bg-image.88c675462650425efd33.jpg",
-    "static/media/AmpoluDileepKumar_Software_Engineer_Resume.pdf": "/react-portfolio/static/media/AmpoluDileepKumar_Software_Engineer_Resume.19ad6d7788e3dfb6697d.pdf",
+    "static/media/AmpoluDileepKumar_Software_Engineer_Resume.pdf": "/react-portfolio/static/media/AmpoluDileepKumar_Software_Engineer_Resume.a55bd2edd5e1bccbd3d7.pdf",
     "static/media/dileep.jpeg": "/react-portfolio/static/media/dileep.8f490c970ced145172f7.jpeg",
     "index.html": "/react-portfolio/index.html",
     "main.12cb0698.css.map": "/react-portfolio/static/css/main.12cb0698.css.map",
-    "main.fe95f08e.js.map": "/react-portfolio/static/js/main.fe95f08e.js.map",
+    "main.e2da2b99.js.map": "/react-portfolio/static/js/main.e2da2b99.js.map",
     "919.c8322f28.chunk.js.map": "/react-portfolio/static/js/919.c8322f28.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.12cb0698.css",
-    "static/js/main.fe95f08e.js"
+    "static/js/main.e2da2b99.js"
   ]
 }
