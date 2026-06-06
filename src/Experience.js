@@ -34,7 +34,7 @@ export default function Experience() {
         {/* Core Vertical Timeline Path line */}
         <div className="timeline-line"></div>
 
-        {/* Experience Item 1: Present (Dimensionleap PVT LTD) */}
+        {/* Experience Item 1: Present (Dimensionleap Technologies Pvt Ltd) */}
         <div className="timeline-item">
           {/* Timeline node icon indicator */}
           <div className="timeline-node">
@@ -45,12 +45,12 @@ export default function Experience() {
           <div className="timeline-content glass-container">
             <div className="experience-header-block">
               <span className="experience-duration-tag">
-                <i className="far fa-calendar-alt"></i> June 2026 - Present (3+ Years Overall)
+                <i className="far fa-calendar-alt"></i> April 2025 - Present (3+ Years Overall)
               </span>
               
-              <h3 className="experience-role">Front-End & Back-End Developer</h3>
+              <h3 className="experience-role">Software Engineer</h3>
               <h4 className="experience-company">
-                <i className="fas fa-building"></i> Dimensionleap PVT LTD
+                <i className="fas fa-building"></i> Dimensionleap Technologies Pvt Ltd
               </h4>
               
               <div className="experience-location">
@@ -62,7 +62,7 @@ export default function Experience() {
             <div className="experience-skills-box">
               <h5>Technologies Mastered:</h5>
               <div className="experience-skills-pills">
-                {['Angular', 'React', 'HTML', 'CSS', 'JavaScript', 'TypeScript', 'RxJs', 'Java', 'NodeJS', 'Git', 'REST APIs'].map((tech, idx) => (
+                {['Java', 'Spring Boot', 'PostgreSQL', 'WebSockets', 'Razorpay', 'PayU', 'Agora SDK', 'Microservices', 'REST APIs', 'Angular', 'Git'].map((tech, idx) => (
                   <span className="exp-tech-pill" key={idx}>
                     {tech}
                   </span>
@@ -76,7 +76,7 @@ export default function Experience() {
                 <i className="fas fa-trophy highlight-color"></i> Achievements & Contributions
               </h5>
               <ul className="experience-achievements-list">
-                {braneAchievements.map((item, idx) => (
+                {projectAchievements.map((item, idx) => (
                   <li key={idx}>
                     <i className="fas fa-check-circle check-icon"></i>
                     <span>{item}</span>
@@ -97,7 +97,7 @@ export default function Experience() {
           </div>
         </div>
 
-        {/* Experience Item 2: Apr-2025 to June-2026 (Healthcare & Fintech) */}
+        {/* Experience Item 2: November 2022 to February 2025 (Brane Enterprise Pvt Ltd) */}
         <div className="timeline-item" style={{ marginTop: '3.5rem' }}>
           {/* Timeline node icon indicator */}
           <div className="timeline-node">
@@ -108,12 +108,12 @@ export default function Experience() {
           <div className="timeline-content glass-container">
             <div className="experience-header-block">
               <span className="experience-duration-tag">
-                <i className="far fa-calendar-alt"></i> April 2025 - June 2026
+                <i className="far fa-calendar-alt"></i> November 2022 - February 2025
               </span>
               
-              <h3 className="experience-role">Backend Developer (Java Spring Boot)</h3>
+              <h3 className="experience-role">Front-End & Back-End Developer</h3>
               <h4 className="experience-company">
-                <i className="fas fa-laptop-code"></i> AesthatiQ & Spotlight Platforms
+                <i className="fas fa-building"></i> Brane Enterprise Pvt Ltd
               </h4>
               
               <div className="experience-location">
@@ -125,7 +125,7 @@ export default function Experience() {
             <div className="experience-skills-box">
               <h5>Technologies Mastered:</h5>
               <div className="experience-skills-pills">
-                {['Java', 'Spring Boot', 'PostgreSQL', 'WebSockets', 'Razorpay', 'PayU', 'Agora SDK', 'Microservices', 'REST APIs', 'Git'].map((tech, idx) => (
+                {['Angular', 'HTML', 'CSS', 'JavaScript', 'TypeScript', 'RxJs', 'Java', 'Git', 'REST APIs'].map((tech, idx) => (
                   <span className="exp-tech-pill" key={idx}>
                     {tech}
                   </span>
@@ -139,7 +139,7 @@ export default function Experience() {
                 <i className="fas fa-trophy highlight-color"></i> Key Contributions & Platform Development
               </h5>
               <ul className="experience-achievements-list">
-                {projectAchievements.map((item, idx) => (
+                {braneAchievements.map((item, idx) => (
                   <li key={idx}>
                     <i className="fas fa-check-circle check-icon"></i>
                     <span>{item}</span>
